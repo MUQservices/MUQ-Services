@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MUQ Services - Trusted Service Provider Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #1a237e;
+      --secondary-color: #55b7e2;
+      --text-color: #333;
+      --light-bg: #f5f8ff;
+      --card-bg: #fff;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #283593);
+      color: #fff;
+      padding: 100px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #fff;
+      border: 5px solid var(--secondary-color);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .logo-img {
+      width: 92%;
+      height: 92%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-top: 70px;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 10px;
+    }
+
+    main {
+      padding-bottom: 60px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--secondary-color);
+      border-radius: 2px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+
+    .service-item:hover,
+    .service-item:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-item h3 {
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    .service-item p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .contact-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-btn {
+      background: var(--secondary-color);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(85, 183, 226, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover,
+    .contact-btn:focus {
+      background: var(--primary-color);
+      outline: none;
+    }
+
+    .contact-info {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      text-align: center;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .contact-info a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover,
+    .contact-info a:focus {
+      color: var(--primary-color);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script>
+    function showContactInfo() {
+      const info = document.getElementById('contact-info');
+      if (info.style.display !== 'block') {
+        info.style.display = 'block';
+        info.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.contact-btn').setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container" role="img" aria-label="MUQ Services Logo">
+      <img src="Untitled-design-1.jpg.jpg" alt="MUQ Services Logo" class="logo-img" />
+    </div>
+    <div class="container">
+      <h1>MUQ Services</h1>
+      <p>Your Partner in Business Solutions</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">About Us</h2>
+        <p style="text-align: center;">
+          MUQ Services is a leading agency dedicated to connecting you with genuine professionals for your business
+          needs. We are committed to simplifying your search for reliable experts and providing solutions that help your
+          business grow and succeed.
+        </p>
+      </div>
+    </section>
+
+    <section class="services" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="section-title">Our Expertise</h2>
+        <ul class="services-grid">
+          <li class="service-item" tabindex="0">
+            <h3>Professional Connections</h3>
+            <p>Connecting clients with genuine, skilled professionals and virtual assistants.</p>
+          </li>
+          <li class="service-item" tabindex="0">
+            <h3>Business Support</h3>
+            <p>Offering comprehensive business process outsourcing and administrative support.</p>
+          </li>
+          <li class="service-item" tabindex="0">
+            <h3>Project Management</h3>
+            <p>Providing expert project management and consultancy to guide your projects to success.</p>
+          </li>
+          <li class="service-item" tabindex="0">
+            <h3>Customer Support</h3>
+            <p>Delivering reliable and efficient customer support solutions.</p>
+          </li>
+          <li class="service-item" tabindex="0">
+            <h3>Custom Solutions</h3>
+            <p>Creating personalized service packages tailored to your unique business requirements.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-label="Contact">
+      <button class="contact-btn" onclick="showContactInfo()" aria-expanded="false" aria-controls="contact-info">
+        Contact Us
+      </button>
+      <div id="contact-info" class="contact-info" role="region" aria-live="polite">
+        <p>Email: <a href="mailto:muqservices@gmail.com">muqservices@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/muq-services-0a012a384/" target="_blank"
+            rel="noopener noreferrer">MUQ Services</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2025 MUQ Services. All Rights Reserved.</div>
+  </footer>
+</body>
+
+</html>
