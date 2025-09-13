@@ -37,35 +37,43 @@
         }
 
         .logo-container {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin: 0 auto 20px auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin: 0 auto 30px auto;
+            border: 5px solid var(--secondary-color);
+            position: absolute;
+            left: 50%;
+            top: -90px;
+            transform: translateX(-50%);
+            z-index: 2;
         }
 
-        .logo {
-            width: 90%;
-            height: auto;
+        .logo-img {
+            width: 92%;
+            height: 92%;
             object-fit: contain;
             border-radius: 50%;
+            display: block;
         }
 
         header h1 {
-            font-size: 3em;
-            margin: 0;
+            font-size: 3.5em;
+            margin: 70px 0 0 0;
             font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header p {
-            font-size: 1.2em;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.4em;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
         }
 
         .section {
@@ -127,10 +135,41 @@
             font-size: 1em;
         }
 
+        .contact-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 40px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(85, 183, 226, 0.15);
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
         .contact-info {
+            display: none;
             text-align: center;
             font-size: 1.1em;
-            margin-top: 40px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
         }
         
         .contact-info a {
@@ -144,22 +183,10 @@
             color: var(--primary-color);
             text-decoration: underline;
         }
-        
-        .contact-btn {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .contact-btn:hover {
-            background-color: var(--primary-color);
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
         }
 
         .footer {
@@ -170,13 +197,22 @@
             font-size: 0.9em;
         }
     </style>
+    <script>
+        function showContactInfo() {
+            var info = document.getElementById('contact-info');
+            if (info.style.display !== 'block') {
+                info.style.display = 'block';
+                info.scrollIntoView({behavior: "smooth"});
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <img src="Untitled design (1).jpg" alt="MUQ Services Logo" class="logo-img">
+        </div>
         <div class="container">
-            <div class="logo-container">
-                <img src="Untitled design (1).jpg" alt="MUQ Services Logo" class="logo">
-            </div>
             <h1>MUQ Services</h1>
             <p>Your Partner in Business Solutions</p>
         </div>
@@ -219,13 +255,11 @@
         </div>
     </div>
 
-    <div class="section contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:muqservices@gmail.com">muqservices@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/muq-services-0a012a384/" target="_blank">MUQ Services</a></p>
-            </div>
+    <div class="section contact-section">
+        <button class="contact-btn" onclick="showContactInfo()">Contact Us</button>
+        <div class="contact-info" id="contact-info">
+            <p>Email: <a href="mailto:muqservices@gmail.com">muqservices@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/muq-services-0a012a384/" target="_blank">MUQ Services</a></p>
         </div>
     </div>
 
