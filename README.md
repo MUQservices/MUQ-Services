@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a237e; /* Dark Blue from Logo */
-            --secondary-color: #55b7e2; /* Light Blue from Logo */
+            --primary-color: #1a237e; /* Dark Blue */
+            --secondary-color: #55b7e2; /* Light Blue */
             --text-color: #333;
             --light-bg: #f5f8ff;
             --card-bg: #ffffff;
@@ -122,14 +122,14 @@
             transform: translateY(-10px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
-        
+
         .service-item h3 {
             color: var(--primary-color);
             font-size: 1.4em;
             font-weight: 700;
             margin-top: 15px;
         }
-        
+
         .service-item p {
             color: #666;
             font-size: 1em;
@@ -171,7 +171,7 @@
         .contact-info p {
             margin: 5px 0;
         }
-        
+
         .contact-info a {
             color: var(--secondary-color);
             text-decoration: none;
@@ -190,83 +190,4 @@
         }
 
         .footer {
-            background-color: var(--primary-color);
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 25px 0;
-            font-size: 0.9em;
-        }
-    </style>
-    <script>
-        function showContactInfo() {
-            var info = document.getElementById('contact-info');
-            if (info.style.display !== 'block') {
-                info.style.display = 'block';
-                info.scrollIntoView({behavior: "smooth"});
-            }
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="Untitled design (1).jpg" alt="MUQ Services Logo" class="logo-img">
-        </div>
-        <div class="container">
-            <h1>MUQ Services</h1>
-            <p>Your Partner in Business Solutions</p>
-        </div>
-    </header>
-
-    <div class="section about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <p style="text-align: center;">
-                MUQ Services is a leading agency dedicated to connecting you with genuine professionals for your business needs. We are committed to simplifying your search for reliable experts and providing solutions that help your business grow and succeed.
-            </p>
-        </div>
-    </div>
-
-    <div class="section services">
-        <div class="container">
-            <h2 class="section-title">Our Expertise</h2>
-            <ul class="services-grid">
-                <li class="service-item">
-                    <h3>Professional Connections</h3>
-                    <p>Connecting clients with genuine, skilled professionals and virtual assistants.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Business Support</h3>
-                    <p>Offering comprehensive business process outsourcing and administrative support.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Project Management</h3>
-                    <p>Providing expert project management and consultancy to guide your projects to success.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Customer Support</h3>
-                    <p>Delivering reliable and efficient customer support solutions.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Custom Solutions</h3>
-                    <p>Creating personalized service packages tailored to your unique business requirements.</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section contact-section">
-        <button class="contact-btn" onclick="showContactInfo()">Contact Us</button>
-        <div class="contact-info" id="contact-info">
-            <p>Email: <a href="mailto:muqservices@gmail.com">muqservices@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/muq-services-0a012a384/" target="_blank">MUQ Services</a></p>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            &copy; 2025 MUQ Services. All Rights Reserved.
-        </div>
-    </footer>
-</body>
-</html>
+            background-color: v
